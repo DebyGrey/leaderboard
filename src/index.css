@@ -1,0 +1,57 @@
+/* General CSS with mobile first approach */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.leaderboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid black;
+}
+.leaderboard-section h1 {
+  text-align: left;
+}
+.leaderboard-content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 20px;
+}
+.leaderboard-right-section, .leaderboard-left-section, .leaderboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.leaderboard-form{
+    width: 80%;
+}
+.leaderboard-left-section-title {
+    display: flex;
+    justify-content: space-between;
+}
+.refresh-btn, .submit-btn {
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+}
+.submit-btn {
+    align-self: flex-end;
+}
+.input-name, .input-score{
+    height: 45px;
+    padding: 10px;
+    border: 1px solid black;
+}
