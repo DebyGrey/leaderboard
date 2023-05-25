@@ -27,23 +27,6 @@ export default class UI {
     }
   };
 
-  // static displayScores = async () => {
-  //   const scoreList = await API.getData();
-  //   const scoreBoard = document.querySelector('.score-board');
-  //   scoreBoard.innerHTML = '';
-  //   if (scoreList.length === 0) {
-  //     scoreBoard.innerHTML = 'No score to display yet';
-  //   } else {
-  //     scoreList.forEach((score) => {
-  //       const scoreListItem = document.createElement('li');
-  //       scoreListItem.classList.add('score-list-item');
-  //       const scoresText = `${score.user}: ${score.score}`;
-  //       scoreListItem.innerHTML = scoresText;
-  //       scoreBoard.appendChild(scoreListItem);
-  //     });
-  //   }
-  // };
-
   // Add score
   static addScore = async (e) => {
     e.preventDefault();
@@ -51,7 +34,7 @@ export default class UI {
     const nameInput = document.querySelector('.input-name');
     const scoreInput = document.querySelector('.input-score');
     const regExpforNumbersOnly = /^(d+ )*(d+)$/;
-    const regExpforAlphabetsOnly = /^[a-zA-Z]+$/;
+    const regExpforAlphabetsOnly = /^[a-zA-Z\s]+$/;
 
     if (
       nameInput.value === ''
