@@ -68,3 +68,18 @@
   padding: 10px;
   border: 1px solid black;
 }
+
+.score-board {
+  overflow: scroll;
+}
+
+.score-list-item {
+  border: 1px solid black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 1% 0% 1% 2%;
+  background-color: #fff;
+}

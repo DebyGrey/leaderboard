@@ -115,7 +115,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _modules_UI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/UI.js */ \"./src/modules/UI.js\");\n\n\n\ndocument.addEventListener('DOMContentLoaded', _modules_UI_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].displayScores());\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/UI.js":
+/*!***************************!*\
+  !*** ./src/modules/UI.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ UI)\n/* harmony export */ });\n// display ranks\nclass UI {\n  static scores = [\n    { name: 'janet', score: 50 },\n    { name: 'john', score: 20 },\n  ];\n\n    static displayScores = () => {\n      const scoreBoard = document.querySelector('.score-board');\n      const listItem = document.createElement('li');\n      if (UI.scores.length === 0) {\n        listItem.innerHTML = 'No score to display yet';\n      } else {\n        UI.scores.forEach((score) => {\n          listItem.innerHTML = score;\n          scoreBoard.appendChild(listItem);\n        });\n      }\n    };\n}\n\n\n//# sourceURL=webpack://leaderboard/./src/modules/UI.js?");
 
 /***/ })
 
