@@ -6,18 +6,43 @@ export default class UI {
     const scoreList = await API.getData();
     const scoreBoard = document.querySelector('.score-board');
     scoreBoard.innerHTML = '';
+
     if (scoreList.length === 0) {
       scoreBoard.innerHTML = 'No score to display yet';
     } else {
-      scoreList.forEach((score) => {
+      scoreList.forEach((score, index) => {
         const scoreListItem = document.createElement('li');
         scoreListItem.classList.add('score-list-item');
+
+        if ((index + 1) % 2 === 0) {
+          scoreListItem.classList.add('gray-item');
+        } else {
+          scoreListItem.classList.add('white-item');
+        }
+
         const scoresText = `${score.user}: ${score.score}`;
         scoreListItem.innerHTML = scoresText;
         scoreBoard.appendChild(scoreListItem);
       });
     }
   };
+
+  // static displayScores = async () => {
+  //   const scoreList = await API.getData();
+  //   const scoreBoard = document.querySelector('.score-board');
+  //   scoreBoard.innerHTML = '';
+  //   if (scoreList.length === 0) {
+  //     scoreBoard.innerHTML = 'No score to display yet';
+  //   } else {
+  //     scoreList.forEach((score) => {
+  //       const scoreListItem = document.createElement('li');
+  //       scoreListItem.classList.add('score-list-item');
+  //       const scoresText = `${score.user}: ${score.score}`;
+  //       scoreListItem.innerHTML = scoresText;
+  //       scoreBoard.appendChild(scoreListItem);
+  //     });
+  //   }
+  // };
 
   // Add score
   static addScore = async (e) => {
@@ -30,7 +55,7 @@ export default class UI {
 
     if (
       nameInput.value === ''
-          || !regExpforAlphabetsOnly.test(nameInput.value)
+      || !regExpforAlphabetsOnly.test(nameInput.value)
     ) {
       nameInput.focus();
       return;
@@ -38,7 +63,7 @@ export default class UI {
 
     if (
       scoreInput.value === ''
-          || !regExpforNumbersOnly.test(scoreInput.value)
+      || !regExpforNumbersOnly.test(scoreInput.value)
     ) {
       scoreInput.focus();
     }
