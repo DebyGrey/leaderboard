@@ -71,6 +71,7 @@
 }
 
 .score-board {
+  height: 300px;
   overflow: scroll;
   background-color: #d3d3d3;
 }
