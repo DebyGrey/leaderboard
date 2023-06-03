@@ -2,7 +2,8 @@ export default class API {
   static baseURL =
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
-  static gameID = localStorage.getItem('ID');
+  // PyOj9cYru3lhpatJsdkj
+  static gameID = 'PyOj9cYru3lhpatJsdkj';
 
   static endpointURL = `games/${API.gameID}/scores/`;
 
@@ -24,7 +25,7 @@ export default class API {
       .then((response) => response.json())
       .then((responseData) => {
         const gameID = responseData.result.split(' ')[3];
-        localStorage.setItem('ID', gameID);
+        return gameID;
       });
   };
 
